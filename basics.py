@@ -246,3 +246,16 @@ for key,value in student_grades.items():
 phone_numbers = {"John Smith": "+37682929928", "Marry Simpons": "+423998200919"}
 for value in phone_numbers.values():
     print(value.replace("+","00"))
+
+
+temps = [222,436,676,876]
+#saving space, integrating dividing /10 for loop in one statement and storing it in new list
+new_temps = [temp / 10 for temp in temps]
+
+print("for loop in one line and storing it in list",new_temps)
+
+#In-line loop 
+temps = [99, 78, 578, -123]
+new_temps = [temp / 10 for temp in temps if temp > 0]
+
+print(new_temps)
