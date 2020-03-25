@@ -259,3 +259,38 @@ temps = [99, 78, 578, -123]
 new_temps = [temp / 10 for temp in temps if temp > 0]
 
 print(new_temps)
+
+#Keyword arguments
+#def multi( a=4, b=5)
+
+# Non-Keyword Arguments
+# def multi(4,5)
+
+# argument with the default value
+# you cannot write default keyword first i.e.  multi(a=5,6) 
+def multi(a, b = 10):
+    c = a * b
+    return c
+
+print(multi(5))
+
+
+# for Multiple Arguments use * in paramter
+def multArgs(*args):
+    return args
+
+print(multArgs(1,2,"Three",4))
+
+#Avg for indefintite number of arguments passed as parameters
+def num(*args):
+    return sum(args) / len(args)
+    
+print(num(1,2,3,54,6,7,7,7,45))
+
+# NOTE that indefinite arguments non keyword will create tuple and will be treated as tuple and use one *
+# whereas default keyword indefinte arguments will create a dictionary and is written using two **
+
+def num(**kwargs):
+    return kwargs
+
+print((num(a=1, b =2, c=3)))
