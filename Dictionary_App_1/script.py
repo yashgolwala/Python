@@ -26,7 +26,7 @@ def retrieve(word):
         return data[wordTitle]
     elif wordUpper in data:
         return data[wordUpper]
-    if (wordLower.replace('.','')) in data:
+    if (wordLower.replace('.','')) in data: # For handling dots in input like U.S.A.
         return data[wordLower.replace('.','')]
     elif (wordTitle.replace('.','')) in data:
         return data[wordTitle.replace('.','')]
