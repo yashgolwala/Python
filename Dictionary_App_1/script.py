@@ -19,13 +19,19 @@ def retrieve(word):
     wordUpper = word.upper() #USA or like words
    # wordAutoCorrect = Speller(lang='en')
    # wordNew = Speller(wordLower)
-    wordNew = get_close_matches(wordLower, data.keys(), n=2, cutoff=0.8)[0]
+    wordNew = get_close_matches(wordLower, data.keys(),cutoff=0.7)[0]
     if wordLower in data:
         return data[wordLower]
     elif wordTitle in data:
         return data[wordTitle]
     elif wordUpper in data:
         return data[wordUpper]
+    if (wordLower.replace('.','')) in data:
+        return data[wordLower.replace('.','')]
+    elif (wordTitle.replace('.','')) in data:
+        return data[wordTitle.replace('.','')]
+    elif (wordUpper.replace('.','')) in data:
+        return data[wordUpper.replace('.','')]
     #elif wordNew in data:
      #   return data[wordNew]
     elif wordNew in data:
